@@ -1,5 +1,5 @@
 import React from 'react'
 
-export const App = () => {
+export default () => {
   return <h1>SIR Simulation</h1>
 }
