@@ -1,0 +1,8 @@
+cradle:
+  cabal:
+    - path: "./"
+      component: "exe:sirsimulation"
+    - path: "./test"
+      component: "test:sirsimulation-test"
+    - path: "./src"
+      component: "lib:sirsimulation"
