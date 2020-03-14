@@ -22,6 +22,8 @@ import {
   Subtext,
 } from './styles'
 
+import StateMap from './components/StateMap'
+
 const theme = createMuiTheme({
   typography: {
     fontFamily: 'Merriweather',
@@ -96,7 +98,9 @@ export const App = () => {
         </TopRow>
         <BottomRow>
           <MapGraphContainer>
-            <Map></Map>
+            <Map>
+              <StateMap />
+            </Map>
             <Graph></Graph>
           </MapGraphContainer>
         </BottomRow>
