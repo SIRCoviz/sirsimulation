@@ -1,5 +1,7 @@
 import React from 'react'
 
+import StateMap from 'components/StateMap'
+
 export default () => {
-  return <h1>SIR Simulation</h1>
+  return <StateMap />
 }

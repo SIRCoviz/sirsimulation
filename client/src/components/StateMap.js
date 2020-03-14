@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 
-const DIM = 800
+const DIM = 500
 const apiUrl =
   process.env.NODE_ENV === 'production'
     ? process.env.REACT_APP_PROD_API_URL
@@ -13,7 +13,6 @@ export default ({ step = 0, initialCases = 5, scaling = 10 }) => {
   useEffect(() => {
     fetch(apiUrl + `/initialstate/${initialCases}/${scaling}`)
       .then(res => res.json())
-      .then(x => (console.log(x), x))
       .then(setData)
       .catch(console.error)
   }, [])
