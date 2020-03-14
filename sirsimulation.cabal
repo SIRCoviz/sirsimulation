@@ -28,6 +28,7 @@ common deps
                      , text
                      , time
                      , wai
+                     , wai-cors
                      , warp
 
 library
