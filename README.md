@@ -47,17 +47,37 @@ currently producing:
       ["Susceptible", "Infected"],
       ["Dead", "Recovered"]
     ]
-  },
-  ...
+  }
+  // ...
 ]
 ```
 
 original suggestion
 
 ```json
-[ { time: 0, cells: [ { x: 0, y: 0, sir: "Susceptible" }, { x: 0, y: 1, sir: "Infected" }, ... ] }
-, { time: 1, cells: [ { x: 0, y: 0, sir: 0.1 }, { x: 0, y: 1, sir: 0.2 }, ... ] }
-, ... ]
+[
+  {
+    "time": 0,
+    "cells": [
+      { "x": 0, "y": 0, "sir": "Susceptible" },
+      { "x": 0, "y": 1, "sir": "Infected" }
+    ]
+  }
+  // ...
+]
+```
+
+```json
+[
+  {
+    "time": 0,
+    "cells": [
+      { "x": 0, "y": 0, "sir": 0.1 },
+      { "x": 0, "y": 1, "sir": 0.2 }
+    ]
+  }
+  // ...
+]
 ```
 
 # How does it work?
