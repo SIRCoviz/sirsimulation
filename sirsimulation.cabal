@@ -1,27 +1,46 @@
-cabal-version:       >=1.10
+cabal-version:       2.4
 name:                sirsimulation
 version:             0.1.0.0
-license:             BSD3
+license:             BSD-3-Clause
 license-file:        LICENSE
 author:              Shae Erisson
 maintainer:          shae@scannedinavian.com
 build-type:          Simple
 extra-source-files:  CHANGELOG.md, README.md
 
-library
-  exposed-modules:     MyLib
-  build-depends:       base >=4.13 && <4.14
-  hs-source-dirs:      src
+common deps
   default-language:    Haskell2010
+  build-depends:       base >=4.13 && <4.14
+                     , Cabal
+                     , aeson
+                     , attoparsec
+                     , base-compat
+                     , blaze-html
+                     , blaze-markup
+                     , bytestring
+                     , directory
+                     , http-media
+                     , lucid
+                     , mtl
+                     , servant
+                     , servant-server
+                     , string-conversions
+                     , text
+                     , time
+                     , wai
+                     , warp
+
+library
+  import: deps
+  exposed-modules:     MyLib
+  hs-source-dirs:      src
 
 executable sirsimulation
+  import: deps
   main-is:             Main.hs
-  build-depends:       base >=4.13 && <4.14, sirsimulation
-  default-language:    Haskell2010
 
 test-suite sirsimulation-test
-  default-language:    Haskell2010
+  import: deps
   type:                exitcode-stdio-1.0
   hs-source-dirs:      test
   main-is:             MyLibTest.hs
-  build-depends:       base >=4.13 && <4.14
