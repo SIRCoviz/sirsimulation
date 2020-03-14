@@ -29,6 +29,7 @@ import           Lucid
 import           Network.HTTP.Media            ((//), (/:))
 import           Network.Wai
 import           Network.Wai.Handler.Warp
+import           Network.Wai.Middleware.Cors   (simpleCors)
 import           Servant
 import           Servant.Types.SourceT         (source)
 import           System.Directory
@@ -66,7 +67,7 @@ app :: Application
 app = serve simAPI server
 
 main :: IO ()
-main = run 8080 app
+main = run 8080 $ simpleCors app
 
 someSteps :: [Step]
 someSteps = boringStep <$> [1..50]
