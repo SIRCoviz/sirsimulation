@@ -1,4 +1,5 @@
 # sirsimulation
+
 SIR model for simulation
 
 # How do I make it go?
@@ -11,7 +12,15 @@ SIR model for simulation
 
 # How do I run the front end?
 
-TODO
+**Prerequisites:** Node, Yarn
+
+From the `client` directory, run
+
+```bash
+$ yarn add && yarn start
+```
+
+Client should be running on `localhost:3000`
 
 # What's left to do?
 
@@ -24,10 +33,27 @@ TODO
 currently producing:
 
 ```json
-[ { time: 0, cells: [ [ "Susceptible", "Infected" ], [ "Dead, "Recovered" ] ] }
+[
+  {
+    "time": 0,
+    "cells": [
+      ["Susceptible", "Infected"],
+      ["Dead", "Recovered"]
+    ]
+  },
+  {
+    "time": 1,
+    "cells": [
+      ["Susceptible", "Infected"],
+      ["Dead", "Recovered"]
+    ]
+  },
+  ...
+]
 ```
 
 original suggestion
+
 ```json
 [ { time: 0, cells: [ { x: 0, y: 0, sir: "Susceptible" }, { x: 0, y: 1, sir: "Infected" }, ... ] }
 , { time: 1, cells: [ { x: 0, y: 0, sir: 0.1 }, { x: 0, y: 1, sir: 0.2 }, ... ] }
