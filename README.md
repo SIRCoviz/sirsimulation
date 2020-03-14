@@ -48,7 +48,6 @@ currently producing:
       ["Dead", "Recovered"]
     ]
   }
-  // ...
 ]
 ```
 
@@ -63,7 +62,6 @@ original suggestion
       { "x": 0, "y": 1, "sir": "Infected" }
     ]
   }
-  // ...
 ]
 ```
 
@@ -76,7 +74,6 @@ original suggestion
       { "x": 0, "y": 1, "sir": 0.2 }
     ]
   }
-  // ...
 ]
 ```
 
