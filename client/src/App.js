@@ -1,6 +1,4 @@
 import React from 'react'
-import Button from '@material-ui/core/Button'
-import TextField from '@material-ui/core/TextField'
 import {
   createMuiTheme,
   ThemeProvider,
@@ -9,17 +7,20 @@ import {
 
 import {
   Container,
-  Header,
-  TopRow,
-  TopPane,
-  TopPaneHeader,
-  BottomRow,
-  TopPaneRow,
-  MapGraphContainer,
-  Map,
-  Graph,
-  SubHeader,
-  Subtext,
+  StyledH1,
+  StyledH2,
+  StyledH3,
+  MapPane,
+  GraphPane,
+  StyledButton,
+  LeftPane,
+  RightPane,
+  StyledTextField,
+  CenterPanesContainer,
+  PanesContainer,
+  Capacity,
+  Infected,
+  Deceased,
 } from './styles'
 
 import StateMap from './components/StateMap'
@@ -28,82 +29,69 @@ const theme = createMuiTheme({
   typography: {
     fontFamily: 'Merriweather',
   },
-  overrides: {
-    MuiInput: {
-      text: {
-        // Some CSS
-        color: 'white',
-      },
-    },
-  },
 })
 
 export const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <Container>
-        <Header>COVID-19 SIRmulation</Header>
-        <SubHeader>
+        <StyledH1>COVID-19 SIR Simulation</StyledH1>
+        <StyledH2>
           This tool allows you to simulate the progression of the COVID19 virus
           using the SIR model.
-        </SubHeader>
-        <TopRow>
-          <TopPane>
-            <TopPaneHeader>Initial Data</TopPaneHeader>
-            <TopPaneRow>
-              <TextField
-                id="filled-basic"
-                variant="filled"
-                placeholder="Location"
-                size="small"
-                margin="dense"
-              />
-            </TopPaneRow>
-            <Subtext>population which you would like to simulate</Subtext>
-            <TopPaneRow>
-              <TextField
-                id="filled-basic"
-                variant="filled"
-                placeholder="Current Cases"
-              />
-            </TopPaneRow>
-            <Subtext>as of today, March 14th, 2019</Subtext>
-            <TopPaneHeader>Behavior Adjustments</TopPaneHeader>
-            <TopPaneRow>
-              <TextField
-                id="filled-basic"
-                variant="filled"
-                placeholder="Pre-COVID Interactions"
-                size="small"
-              />
-            </TopPaneRow>
-            <Subtext>social interactions per day, week, or month</Subtext>
-            <TopPaneRow>
-              <TextField
-                id="filled-basic"
-                variant="filled"
-                placeholder="Current Interactions"
-                size="small"
-              />
-            </TopPaneRow>
-            <Subtext>social interactions per day, week, or month</Subtext>
-            <Button>Start</Button>
-          </TopPane>
-          <TopPane>
-            <TopPaneHeader>Projected Outcomes</TopPaneHeader>
-            <TopPaneRow>Date hospitals overloaded</TopPaneRow>
-            <TopPaneRow>Total Infections</TopPaneRow>
-            <TopPaneRow>Total Deaths</TopPaneRow>
-          </TopPane>
-        </TopRow>
-        <BottomRow>
-          <MapGraphContainer>
-            <Map>
+        </StyledH2>
+        <PanesContainer>
+          <LeftPane>
+            <StyledH3>Initial Data</StyledH3>
+            <StyledTextField
+              id="filled-basic"
+              variant="filled"
+              placeholder="Location"
+              helperText="population which you would like to simulate"
+              size="small"
+            />
+            <StyledTextField
+              id="filled-basic"
+              variant="filled"
+              placeholder="Current Cases"
+              helperText="as of today, March 14th, 2019"
+              size="small"
+            />
+            <StyledH3>Behavior Adjustments</StyledH3>
+            <StyledTextField
+              id="filled-basic"
+              variant="filled"
+              placeholder="Pre-COVID Interactions"
+              helperText="social interactions per day, week, or month"
+              size="small"
+            />
+            <StyledTextField
+              id="filled-basic"
+              variant="filled"
+              placeholder="Current Interactions"
+              helperText="social interactions per day, week, or month"
+              size="small"
+            />
+            <StyledButton>Simulate</StyledButton>
+          </LeftPane>
+          <CenterPanesContainer>
+            <MapPane>
+              <StyledH3>Spatial SIR Simulation</StyledH3>
               <StateMap />
-            </Map>
-            <Graph></Graph>
-          </MapGraphContainer>
-        </BottomRow>
+            </MapPane>
+            <GraphPane>
+              <StyledH3>Cases Over Time</StyledH3>
+            </GraphPane>
+          </CenterPanesContainer>
+          <RightPane>
+            <StyledH3>Date Hospitals Over Capacity</StyledH3>
+            <Capacity>09.18.2020</Capacity>
+            <StyledH3>Total Infected</StyledH3>
+            <Infected>2,298,982</Infected>
+            <StyledH3>Total Deceased</StyledH3>
+            <Deceased>4,298,982</Deceased>
+          </RightPane>
+        </PanesContainer>
       </Container>
     </ThemeProvider>
   )
