@@ -13,6 +13,8 @@ common deps
   build-depends:       base >=4.13 && <4.14
                      , Cabal
                      , aeson
+                     , array
+                     , random
                      , attoparsec
                      , base-compat
                      , blaze-html
