@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import Button from '@material-ui/core/Button'
-import TextField from '@material-ui/core/TextField'
 
 export const Container = styled.div`
   width: 1280px;
@@ -15,13 +14,15 @@ export const StyledH1 = styled.h1`
   padding: 0;
   font-size: 44px;
   font-weight: normal;
+  font-family: 'Merriweather';
 `
 
 export const StyledH2 = styled.h2`
   margin: 0;
   padding: 0;
   font-size: 16px;
-  font-weight: normal;
+  font-weight: 300;
+  font-family: 'Roboto';
 `
 
 export const StyledH3 = styled.h3`
@@ -29,6 +30,7 @@ export const StyledH3 = styled.h3`
   padding: 0;
   font-size: 16px;
   font-weight: bold;
+  font-family: 'Merriweather';
 `
 
 export const PanesContainer = styled.div`
@@ -43,18 +45,14 @@ export const LeftPane = styled.div`
   flex: 1;
 `
 
-export const StyledTextField = styled(TextField)`
-  margin-bottom: 16px;
-`
-
 export const StyledButton = styled(Button)`
-  background-color: #ffa902;
+  background-color: #c4a808;
   color: #ffffff;
   width: 104px;
   border-radius: 0;
 
   &:hover {
-    background-color: #ffa902;
+    background-color: #c4a808;
   }
 `
 

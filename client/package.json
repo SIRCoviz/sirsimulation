@@ -9,7 +9,8 @@
     "react-dom": "^16.13.0",
     "react-scripts": "3.4.0",
     "styled-components": "^5.0.1",
-    "typeface-merriweather": "^0.0.72"
+    "typeface-merriweather": "^0.0.72",
+    "typeface-roboto": "^0.0.75"
   },
   "scripts": {
     "start": "react-scripts start",
