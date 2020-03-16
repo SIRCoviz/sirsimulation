@@ -119,8 +119,8 @@ getNeighbors _                = []
 
 -- https://en.wikipedia.org/wiki/Epidemic_models_on_lattices#SIR_model
 -- | each four neighbors of a cell have a chance of being infected, we're trying 0.176
-possiblyInfect :: Float -> ((Int,Int),SIRD)
-possiblyInfect f a@((x,y),status) -> if f < 0.176 then ((x,y),Infected) else a
+possiblyInfect :: Float -> ((Int,Int),SIRD) -> ((Int,Int),SIRD)
+possiblyInfect f a@((x,y),status) = if f < 0.176 then ((x,y),Infected) else a
 
 -- just sew this next part together?
 -- zipWith possiblyInfect neighbors (randomRs (0.0,1.0 :: Float) stdgen)
